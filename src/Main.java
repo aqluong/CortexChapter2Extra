@@ -1,20 +1,26 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         // TODO: 1 instantiate a variable called hello with a string value of "Hello world"
+        String hello = "Hello world";
         // TODO: 2 instantiate a variable called gerard with a string value of "BananaCat"
+        String gerard = "BananaCat😻";
         // TODO: 3 instantiate a variable called triBase with a numerical value of 3.5
+        Double triBase = 3.5;
         // TODO: 4 instantiate a variable called triHei with a numerical value of 2.5
+        Double triHei = 2.5;
 
 
         // TODO: 5 instantiate a user input variable, called input, and import the appropriate class/package into this file
-
+        Scanner input = new Scanner(System.in);
 
         // TODO: 6 instantiate a variable that is a string called userInput and have its value be the user input for a previous System.out.println()
         System.out.println("Please enter a string: ");
-
+        String userInput = input.nextLine();
         System.out.println("I should be the variable userInput!");
 //        Line 17 should concatenate the userInput into the System.out.println() below
-        System.out.println( " is what you entered into the console");
+        System.out.println(userInput + " is what you entered into the console");
 
 //        Finish the returnFirstAndLast function before running this code!
         System.out.println(returnFirstAndLast("BananaCat"));
@@ -22,6 +28,8 @@ public class Main {
 
         // TODO 7a use a System.out.println() to print to the console returnFirstAndLast() with the argument userInput
         System.out.println("Let's enter a new word! What word do you want to enter?");
+        userInput = input.nextLine();
+        System.out.println("returnFirstAndLast() applied to the word " + userInput + " is " + returnFirstAndLast(userInput));
 
         // TODO: 8a instantiate a new variable, called evenLetters and have its value be "qUiZzInG"
 
@@ -40,7 +48,10 @@ public class Main {
     public static String returnFirstAndLast(String str) {
         // TODO: 7 finish this method- notice the syntax in creating this method!
 //        we want this function to take in a string argument and return the first and last letters of a string
-        return str;
+        char first = str.charAt(0);
+        char last = str.charAt(str.length()-1);
+        String together = "" + first + last;
+        return together;
     }
     
     public static String returnFirstMiddleLast(String str) {
